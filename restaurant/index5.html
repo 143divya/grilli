@@ -1,0 +1,238 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Restaurant</title>
+    <link rel="stylesheet" href="rahul.css">
+    <title>DELIQUISH</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Food Restaurant</h1>
+        <img src="Brown and Beige Flat Illustrative Tea Products Logo (1).png" alt="" height="200px" width="200px" <a href="">
+            <img src="Brown and Orange Vintage Modern Americana Restaurant and Food Banner.png" alt="" height="200px" width="200px">
+            <img src="Orange Red Illustration Traditional Food For Sale Blog Banner (1).png" alt="" height="200px" width="200px">
+            <img src="Yellow Creative Noodle Food Promotion Banner .png" alt="" height="200px" width="200px">
+
+
+        <nav>
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="menu">Menu</a></li>
+                <li><a href="contact">Contact</a></li>
+                
+            </ul>
+        </nav>
+        
+        <style>
+
+            body {
+                body{
+            display: grid;
+            place-items: center;
+        }
+        .box{
+            color: red;
+            background-color: yellow;
+
+        }
+        .box:hover{
+            color: black;
+            background-color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        button{
+                color: aqua;
+                background-color: blueviolet;
+                font-family: cursive;
+                border-radius: 50%;
+                box-shadow: 0 0 25px red,0 0 25px red;
+            }
+            button:hover{
+                background-color: yellow;
+                color: black;
+                font-size: 20px;
+
+            }
+            .text{
+                font-size: 180px;
+                margin-top: 30px;
+                color: magenta;
+                -webkit-text-stroke: 4px;
+                -webkit-text-stroke-color: red;
+                -webkit-text-stroke: 4px red;
+            }
+            
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    background-image: url(Orange Red Illustration Traditional Food For Sale Blog Banner (1).png);
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+main {
+    padding: 2em;
+}
+section {
+    margin-bottom: 2em;
+}
+#menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+.menu-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1em;
+    width: calc(33% - 2em);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-image: url(Brown\ and\ Orange\ Vintage\ Modern\ Americana\ Restaurant\ and\ Food\ Banner.png);
+}
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #333;
+    color: white;
+}
+.rahul{
+    height: 100px;
+            width: 100px;
+            border: 100px;
+            border-radius: 50%;
+            border-color: black;
+            border-bottom: 100px;
+            border-image: url();
+}
+nav{
+        height:100%;
+        width:100% ;
+        background: rgb(217, 222, 224);
+        padding: 50px;
+        box-shadow: 0px 5px 0px #0c0b0b;
+        display: flex;
+        flex-wrap: wrap;
+         
+        
+      } 
+      nav ul{
+        list-style: none;
+        text-align: center;
+        display: flex;
+      }
+      nav ul li{
+        display: inline-block;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      nav ul li a{
+        display: block;
+        padding: 15PX;
+        text-decoration: none;
+        color: rgb(1, 5, 5);
+        transition: all 0.3s ease;
+        
+
+        
+      }
+      nav :hover{
+        background: #c7c3c3;
+        color: #fff;
+
+      }
+      nav ul li a :hover{
+        border bottom: 2px solid #3498db ;
+      }
+      nav ul li a :hover{
+        background: radial-gradient(circle, #3498db, #fff);
+      }
+      
+      
+
+      
+        </style>
+    </header>
+    <main>
+        <section id="home">
+            <h2>About Us</h2>
+            <p>Welcome to our food restaurant! We offer a variety of delicious meals prepared with the freshest ingredients. Join us for a delightful dining experience.</p>
+        </section>
+        <section id="menu">
+            <h2>What's on ur mind</h2>
+            <img src="b9ff332a-35a5-4da5-9689-c7cc036b3678.jpeg" alt="">
+            <a href="burgers">Burgers</a>
+            <img src="35c3152d-9e90-4a79-a052-fe13d87297e0.jpeg" alt="">
+            <a href="pizzas">Pizzas</a>
+            <img src="7c9b859b-e2eb-4799-85d5-f2c14147c35f.jpeg" alt="rolls">
+            <a href="rolls">Rolls</a>
+
+            <div id="menu-items">
+                <!-- Menu items will be dynamically loaded here -->
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Address: KHATRA MAHAL, SHAITAN GALI INFRONT OF SHAMSHAN  </p>
+            <p>Phone: (9555724943)</p>
+            <p>Email: rahulgautam71196@gmail.com</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Food Restaurant</p>
+    </footer>
+    <script src="rahul.js">
+        document.addEventListener('DOMContentLoaded', function() {
+    const menuItems = [
+        { name: "Margherita Pizza", description: "Classic delight with 100% real mozzarella cheese", price: 9.99 },
+        { name: "Pasta Alfredo", description: "Creamy Alfredo sauce with garlic and herbs", price: 12.99 },
+        { name: "Caesar Salad", description: "Crisp romaine lettuce and croutons dressed with parmesan", price: 7.99 }
+    ];
+
+    const menuContainer = document.getElementById('menu-items');
+    
+    menuItems.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'menu-item';
+        div.innerHTML = `
+            <h3>${item.name}</h3>
+            <p>${item.description}</p>
+            <p>Price: $${item.price}</p>
+        `;
+        menuContainer.appendChild(div);
+    });
+});
+
+    </script>
+    <nav class="stroke">
+        <ul>
+            <li><B> <a href="home">HOME</a></B></li>
+            <li><B><a href="about">About</a></B></li>
+            <li><B><a href="more">More</a></B></li>
+            <li><B><a href="reviews">Reviews</a></B></li>
+            <li><B><a href="contact us">contact us</a></B></li>
+        </ul>
+    </nav>
+    <button>NEXT PAGE <a href="NEXT PAGE"></a></button>
+    
+</body>
+</html>
